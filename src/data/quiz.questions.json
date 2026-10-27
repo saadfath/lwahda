@@ -1,0 +1,175 @@
+{
+  "quiz": {
+    "id": "unity-day-quiz",
+    "title": {
+      "ar": "اختبار عيد الوحدة",
+      "fr": "Quiz sur la Fête de l'Unité"
+    },
+    "description": {
+      "ar": "عشرة أسئلة متعددة الخيارات مبنية على المصادر الرسمية المعروضة في صفحة المعلومات.",
+      "fr": "Dix questions à choix multiples fondées sur les sources officielles présentées dans la page d'informations."
+    },
+    "questions": [
+      {
+        "id": "q01",
+        "category": "observance-date",
+        "difficulty": "easy",
+        "question": {
+          "ar": "في أي يوم يُحتفى بعيد الوحدة كل سنة؟",
+          "fr": "Quel jour la Fête de l'Unité est-elle célébrée chaque année ?"
+        },
+        "options": [
+          { "id": "a", "text": { "ar": "18 نونبر", "fr": "Le 18 novembre" } },
+          { "id": "b", "text": { "ar": "31 أكتوبر", "fr": "Le 31 octobre" } },
+          { "id": "c", "text": { "ar": "4 نونبر", "fr": "Le 4 novembre" } },
+          { "id": "d", "text": { "ar": "15 يناير", "fr": "Le 15 janvier" } }
+        ],
+        "sourceIds": ["royal-office-ar"]
+      },
+      {
+        "id": "q02",
+        "category": "announcement-date",
+        "difficulty": "easy",
+        "question": {
+          "ar": "ما تاريخ نشر بلاغ الديوان الملكي الذي أعلن عن عيد الوحدة؟",
+          "fr": "Quelle est la date de publication du communiqué du Cabinet royal annonçant la Fête de l'Unité ?"
+        },
+        "options": [
+          { "id": "a", "text": { "ar": "31 أكتوبر 2025", "fr": "Le 31 octobre 2025" } },
+          { "id": "b", "text": { "ar": "15 يناير 2026", "fr": "Le 15 janvier 2026" } },
+          { "id": "c", "text": { "ar": "31 أكتوبر 2026", "fr": "Le 31 octobre 2026" } },
+          { "id": "d", "text": { "ar": "4 نونبر 2025", "fr": "Le 4 novembre 2025" } }
+        ],
+        "sourceIds": ["royal-office-ar", "royal-office-fr", "royal-office-en"]
+      },
+      {
+        "id": "q03",
+        "category": "official-name",
+        "difficulty": "easy",
+        "question": {
+          "ar": "ما الاسم الذي أطلقه البلاغ الملكي على عيد 31 أكتوبر؟",
+          "fr": "Quel nom le communiqué royal donne-t-il à la fête du 31 octobre ?"
+        },
+        "options": [
+          { "id": "a", "text": { "ar": "عيد الوحدة", "fr": "Fête de l'Unité (Aid Al Wahda)" } },
+          { "id": "b", "text": { "ar": "عيد الاستقلال", "fr": "Fête de l'Indépendance" } },
+          { "id": "c", "text": { "ar": "عيد العرش", "fr": "Fête du Trône" } },
+          { "id": "d", "text": { "ar": "ذكرى المسيرة الخضراء", "fr": "Anniversaire de la Marche verte" } }
+        ],
+        "sourceIds": ["royal-office-ar", "royal-office-fr", "royal-office-en"]
+      },
+      {
+        "id": "q04",
+        "category": "announcing-body",
+        "difficulty": "easy",
+        "question": {
+          "ar": "أي جهة نشرت البلاغ الذي أعلن عن عيد الوحدة؟",
+          "fr": "Quelle autorité a publié le communiqué annonçant la Fête de l'Unité ?"
+        },
+        "options": [
+          { "id": "a", "text": { "ar": "مجلس الأمن", "fr": "Le Conseil de sécurité" } },
+          { "id": "b", "text": { "ar": "مجلس النواب", "fr": "La Chambre des représentants" } },
+          { "id": "c", "text": { "ar": "الديوان الملكي", "fr": "Le Cabinet royal" } },
+          { "id": "d", "text": { "ar": "مجلس الحكومة", "fr": "Le Conseil de gouvernement" } }
+        ],
+        "sourceIds": ["royal-office-ar", "royal-office-fr", "royal-office-en"]
+      },
+      {
+        "id": "q05",
+        "category": "royal-pardon",
+        "difficulty": "medium",
+        "question": {
+          "ar": "بحسب بلاغ الديوان الملكي، ما الذي يميز يوم 31 أكتوبر إضافة إلى كونه عيدا وطنيا؟",
+          "fr": "Selon le communiqué du Cabinet royal, que représente aussi le 31 octobre, en plus d'être une fête nationale ?"
+        },
+        "options": [
+          { "id": "a", "text": { "ar": "أنه يوم افتتاح البرلمان", "fr": "Le jour de l'ouverture du Parlement" } },
+          { "id": "b", "text": { "ar": "أنه يوم إلقاء خطاب العرش", "fr": "Le jour du discours du Trône" } },
+          { "id": "c", "text": { "ar": "أنه موعد استحقاق انتخابي", "fr": "Une date d'élections" } },
+          { "id": "d", "text": { "ar": "أنه مناسبة يصدر فيها الملك عفوه", "fr": "Une occasion au cours de laquelle le Roi accorde sa grâce" } }
+        ],
+        "sourceIds": ["royal-office-ar", "royal-office-fr", "royal-office-en"]
+      },
+      {
+        "id": "q06",
+        "category": "un-resolution",
+        "difficulty": "medium",
+        "question": {
+          "ar": "ما رقم قرار مجلس الأمن الذي أشار إليه بلاغ الديوان الملكي؟",
+          "fr": "Quel numéro de résolution du Conseil de sécurité le communiqué du Cabinet royal mentionne-t-il ?"
+        },
+        "options": [
+          { "id": "a", "text": { "ar": "2756", "fr": "2756" } },
+          { "id": "b", "text": { "ar": "2797", "fr": "2797" } },
+          { "id": "c", "text": { "ar": "2654", "fr": "2654" } },
+          { "id": "d", "text": { "ar": "2701", "fr": "2701" } }
+        ],
+        "sourceIds": ["royal-office-ar", "royal-office-fr", "un-res-2797"]
+      },
+      {
+        "id": "q07",
+        "category": "un-vote",
+        "difficulty": "hard",
+        "question": {
+          "ar": "وفق سجل المكتبة الرقمية للأمم المتحدة، كم صوتا مؤيدا نالها القرار 2797 عند اعتماده يوم 31 أكتوبر 2025؟",
+          "fr": "D'après la Bibliothèque numérique des Nations unies, combien de voix pour la résolution 2797 a-t-elle recueillies lors de son adoption le 31 octobre 2025 ?"
+        },
+        "options": [
+          { "id": "a", "text": { "ar": "9 أصوات", "fr": "9 voix" } },
+          { "id": "b", "text": { "ar": "10 أصوات", "fr": "10 voix" } },
+          { "id": "c", "text": { "ar": "11 صوتا", "fr": "11 voix" } },
+          { "id": "d", "text": { "ar": "13 صوتا", "fr": "13 voix" } }
+        ],
+        "sourceIds": ["un-res-2797"]
+      },
+      {
+        "id": "q08",
+        "category": "royal-speeches",
+        "difficulty": "medium",
+        "question": {
+          "ar": "حسب البلاغ، ما المناسبتان الرسميتان اللتان ستُلقى فيهما الخطب الملكية مستقبلا؟",
+          "fr": "Selon le communiqué, quelles sont les deux occasions officielles des discours royaux à l'avenir ?"
+        },
+        "options": [
+          { "id": "a", "text": { "ar": "عيد العرش وافتتاح البرلمان", "fr": "La fête du Trône et l'ouverture du Parlement" } },
+          { "id": "b", "text": { "ar": "عيد الوحدة وعيد الاستقلال", "fr": "La Fête de l'Unité et la fête de l'Indépendance" } },
+          { "id": "c", "text": { "ar": "ذكرى المسيرة الخضراء وعيد العرش", "fr": "L'anniversaire de la Marche verte et la fête du Trône" } },
+          { "id": "d", "text": { "ar": "افتتاح البرلمان وعيد الوحدة", "fr": "L'ouverture du Parlement et la Fête de l'Unité" } }
+        ],
+        "sourceIds": ["royal-office-ar", "royal-office-en"]
+      },
+      {
+        "id": "q09",
+        "category": "green-march",
+        "difficulty": "medium",
+        "question": {
+          "ar": "ماذا ذكر البلاغ بشأن الاحتفالات بالذكرى الخمسين للمسيرة الخضراء؟",
+          "fr": "Que précise le communiqué au sujet des célébrations du cinquantenaire de la Marche verte ?"
+        },
+        "options": [
+          { "id": "a", "text": { "ar": "ستُلغى هذه الاحتفالات", "fr": "Elles sont annulées" } },
+          { "id": "b", "text": { "ar": "ستجري كما هو مبرمج دون خطاب ملكي", "fr": "Elles auront lieu comme prévu, sans discours royal" } },
+          { "id": "c", "text": { "ar": "ستجري مع إلقاء خطاب ملكي", "fr": "Elles auront lieu avec un discours royal" } },
+          { "id": "d", "text": { "ar": "ستُنقل إلى يوم 31 أكتوبر", "fr": "Elles sont reportées au 31 octobre" } }
+        ],
+        "sourceIds": ["royal-office-ar", "royal-office-fr", "royal-office-en"]
+      },
+      {
+        "id": "q10",
+        "category": "government-implementation",
+        "difficulty": "medium",
+        "question": {
+          "ar": "ما الخطوة الحكومية التي تمت يوم 15 يناير 2026 بشأن عيد الوحدة؟",
+          "fr": "Quelle démarche gouvernementale a eu lieu le 15 janvier 2026 au sujet de la Fête de l'Unité ?"
+        },
+        "options": [
+          { "id": "a", "text": { "ar": "اعتمد مجلس الأمن قرارا جديدا بشأن المينورسو", "fr": "Le Conseil de sécurité a adopté une nouvelle résolution sur la MINURSO" } },
+          { "id": "b", "text": { "ar": "صادق البرلمان على قانون يغيّر اسم العيد", "fr": "Le Parlement a voté une loi changeant le nom de la fête" } },
+          { "id": "c", "text": { "ar": "صادق مجلس الحكومة على مشروعي مرسومين لتنفيذ القرار الملكي", "fr": "Le Conseil de gouvernement a approuvé deux projets de décret mettant en œuvre la décision royale" } },
+          { "id": "d", "text": { "ar": "عدّل الديوان الملكي تاريخ العيد", "fr": "Le Cabinet royal a modifié la date de la fête" } }
+        ],
+        "sourceIds": ["medias24-council", "hespress-council-en", "lematin-decrees"]
+      }
+    ]
+  }
+}

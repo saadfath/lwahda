@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --midnight: #0B1F4B;
+  --dusk: #1D4FB8;
+  --amber: #F2A93B;
+  --gold: #D98A1F;
+  --terracotta: #4A2418;
+  --cream: #F6E7CB;
+  --teal: #1F9A94;
+  --ink: #1A1209;
+}
+
+html {
+  font-family: Inter, system-ui, -apple-system, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: var(--midnight);
+  color: var(--cream);
+}

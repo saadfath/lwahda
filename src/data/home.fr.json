@@ -1,0 +1,95 @@
+{
+  "seo": {
+    "title": "TAWḤDA | Fête de l'Unité : le 31 octobre au Maroc",
+    "description": "Découvrez la Fête de l'Unité (Aid Al Wahda), fête nationale célébrée chaque 31 octobre au Maroc, le contexte de son annonce par le Cabinet royal le 4 novembre 2025, puis testez vos connaissances."
+  },
+  "hero": {
+    "eyebrow": "31 octobre · Fête nationale",
+    "title": "Fête de l'Unité : une fête nationale chaque 31 octobre",
+    "subtitle": "Le 4 novembre 2025, le Cabinet royal a annoncé que le 31 octobre de chaque année serait une fête nationale intitulée « Aid Al Wahda ». Découvrez le contexte de cette décision et les dates clés, puis testez vos connaissances.",
+    "dateLabel": "Célébrée chaque année le 31 octobre",
+    "primaryCta": {
+      "label": "Commencer le quiz",
+      "href": "/quiz"
+    },
+    "secondaryCta": {
+      "label": "Lire les informations",
+      "href": "/informations"
+    },
+    "image": {
+      "src": null,
+      "alt": "Le drapeau national du Maroc, rouge orné d'une étoile verte à cinq branches, flotte sur un mât sous un ciel dégagé",
+      "credit": null,
+      "sourceUrl": null,
+      "altAr": "العلم الوطني المغربي، أحمر اللون تتوسطه نجمة خماسية خضراء، يرفرف على سارية في سماء صافية",
+      "altFr": "Le drapeau national du Maroc, rouge orné d'une étoile verte à cinq branches, flotte sur un mât sous un ciel dégagé",
+      "description": "Photographie en format large du drapeau national marocain flottant sous un ciel dégagé, avec un espace libre sur un côté pour placer le texte.",
+      "suggestedFilename": "hero-unity-day-moroccan-flag.jpg",
+      "license": "needs_verification",
+      "attributionNotes": "Aucun fichier image n'a encore été choisi. Il faut sélectionner une image dont la licence est confirmée (par exemple sur Wikimedia Commons, ou une image dont le site détient les droits), puis renseigner src, credit, sourceUrl et license après vérification de la licence et des conditions d'attribution.",
+      "status": "pending_asset"
+    }
+  },
+  "introduction": {
+    "title": "Qu'est-ce que la Fête de l'Unité ?",
+    "paragraphs": [
+      "La Fête de l'Unité (Aid Al Wahda) est une fête nationale du Maroc, célébrée chaque année le 31 octobre. Elle a été annoncée par le Cabinet royal dans un communiqué publié le 4 novembre 2025, dans le contexte de ce que le communiqué qualifie de tournant historique de la Cause nationale et des évolutions décisives issues de la résolution 2797/2025 du Conseil de sécurité.",
+      "Il faut distinguer deux dates : le 31 octobre est la date de la célébration annuelle, tandis que le 4 novembre 2025 est seulement la date de publication du communiqué d'annonce."
+    ]
+  },
+  "highlights": [
+    {
+      "id": "annual-date",
+      "title": "Le 31 octobre de chaque année",
+      "description": "Le communiqué royal fixe le 31 octobre comme fête nationale annuelle, intitulée « Aid Al Wahda ». Il a été publié le 4 novembre 2025 ; cette date n'est pas celle de la célébration.",
+      "sourceIds": ["royal-office-ar"]
+    },
+    {
+      "id": "un-context",
+      "title": "Le contexte de la résolution 2797",
+      "description": "Le Conseil de sécurité a adopté la résolution 2797 le 31 octobre 2025, par 11 voix pour, aucune voix contre et 3 abstentions. Le communiqué du Cabinet royal mentionne cette résolution dans le contexte de l'annonce de la fête.",
+      "sourceIds": ["un-res-2797", "royal-office-ar"]
+    },
+    {
+      "id": "pardon-and-speeches",
+      "title": "Grâce royale et organisation des discours",
+      "description": "Le 31 octobre est une occasion au cours de laquelle le Roi accorde sa grâce. Le communiqué fixe aussi deux occasions officielles pour les discours royaux, la fête du Trône et l'ouverture du Parlement, tout en laissant au Roi la possibilité de s'adresser à la Nation quand il le juge approprié.",
+      "sourceIds": ["royal-office-ar", "royal-office-en"]
+    }
+  ],
+  "timelinePreview": [
+    {
+      "id": "tl-un-resolution-2797",
+      "date": "2025-10-31",
+      "title": "Le Conseil de sécurité adopte la résolution 2797",
+      "sourceIds": ["un-res-2797"]
+    },
+    {
+      "id": "tl-royal-office-statement",
+      "date": "2025-11-04",
+      "title": "Le Cabinet royal annonce la Fête de l'Unité",
+      "sourceIds": ["royal-office-ar"]
+    },
+    {
+      "id": "tl-government-council",
+      "date": "2026-01-15",
+      "title": "Le Conseil de gouvernement approuve deux projets de décret",
+      "sourceIds": ["medias24-council"]
+    },
+    {
+      "id": "tl-first-observance",
+      "date": "2026-10-31",
+      "title": "Premier 31 octobre après l'annonce",
+      "sourceIds": ["royal-office-ar"]
+    }
+  ],
+  "quizPromotion": {
+    "title": "Testez vos connaissances",
+    "description": "Dix questions courtes fondées sur les sources présentées dans la page d'informations. Lisez d'abord, puis testez ce que vous avez appris.",
+    "ctaLabel": "Commencer le quiz"
+  },
+  "closingMessage": {
+    "title": "De la source à l'information",
+    "description": "Cette plateforme présente ce que disent les documents officiels, distingue le texte officiel de l'explication pédagogique et renvoie chaque information à sa source."
+  }
+}

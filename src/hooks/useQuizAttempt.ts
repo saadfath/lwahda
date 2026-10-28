@@ -34,7 +34,10 @@ export function useQuizAttempt() {
           if (error) throw error;
           const res = data as any;
           if (res?.status === 'in_progress') {
-            setState(s => ({ ...s, screen: 'playing', attemptId: id, currentIndex: res.next_q_index || 0 }));
+            setState(s => ({ ...s, screen: 'playing', attemptId: id, currentIndex: res.next_q_index || 0, selectedOption: null, isLocked: false }));
+          } else if (res?.status === 'finished') {
+            try { localStorage.removeItem('tawhda_attempt_id'); } catch(e) {}
+            setState(s => ({ ...s, screen: 'result', result: { score: res.score, correct_count: res.correct_count, total_time_seconds: res.total_time_seconds, rank: res.rank || 0 } }));
           } else {
             try { localStorage.removeItem('tawhda_attempt_id'); } catch(e) {}
           }
@@ -74,7 +77,8 @@ export function useQuizAttempt() {
       const q = questions[currentIndex];
       await supabase.rpc('submit_answer', { p_attempt_id: attemptId, p_question_id: q.id, p_option_id: selectedOption });
       if (currentIndex + 1 >= questions.length) {
-        const { data } = await supabase.rpc('finish_attempt', { p_attempt_id: attemptId });
+        const { data, error } = await supabase.rpc('finish_attempt', { p_attempt_id: attemptId });
+        if (error) throw error;
         try { localStorage.removeItem('tawhda_attempt_id'); } catch(e) {}
         setState(s => ({ ...s, screen: 'result', result: data as any, isSubmitting: false }));
       } else {
@@ -93,7 +97,8 @@ export function useQuizAttempt() {
       const q = questions[currentIndex];
       await supabase.rpc('submit_answer', { p_attempt_id: attemptId, p_question_id: q.id, p_option_id: null });
       if (currentIndex + 1 >= questions.length) {
-        const { data } = await supabase.rpc('finish_attempt', { p_attempt_id: attemptId });
+        const { data, error } = await supabase.rpc('finish_attempt', { p_attempt_id: attemptId });
+        if (error) throw error;
         try { localStorage.removeItem('tawhda_attempt_id'); } catch(e) {}
         setState(s => ({ ...s, screen: 'result', result: data as any, isSubmitting: false }));
       } else {

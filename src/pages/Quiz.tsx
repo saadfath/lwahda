@@ -5,6 +5,7 @@ import TimerRing from '../components/TimerRing';
 import QuizQuestion from '../components/QuizQuestion';
 import { useState } from 'react';
 import { isUsingMock } from '../lib/supabase';
+import { Link } from 'react-router-dom';
 
 export default function Quiz({ lang }: { lang: Lang }) {
   const { state, register, selectOption, advanceOrFinish, timeExpired, restart } = useQuizAttempt();
@@ -16,8 +17,8 @@ export default function Quiz({ lang }: { lang: Lang }) {
 
   const validate = () => {
     const e: any = {};
-    if (fullName.trim().length < 2 || fullName.trim().length > 60) e.fullName = 'Invalid';
-    if (className.trim().length < 1 || className.trim().length > 40) e.className = 'Invalid';
+    if (fullName.trim().length < 2 || fullName.trim().length > 60) e.fullName = lang === 'ar' ? 'الاسم يجب أن يكون بين 2 و60 حرفا' : 'Le nom doit faire entre 2 et 60 caractères';
+    if (className.trim().length < 1 || className.trim().length > 40) e.className = lang === 'ar' ? 'القسم مطلوب' : 'La classe est requise';
     if (!['1ère année','2ème année','3ème année'].includes(yearOfStudy)) e.yearOfStudy = 'Invalid';
     setErrors(e);
     return Object.keys(e).length === 0;
@@ -38,18 +39,19 @@ export default function Quiz({ lang }: { lang: Lang }) {
 
   if (state.screen === 'playing') {
     const qsList = qs;
-    if (!qsList || qsList.length === 0) return <div className="min-h-screen flex items-center justify-center text-cream">No questions</div>;
+    if (!qsList || qsList.length === 0) return <div className="min-h-screen flex items-center justify-center text-on-surface">No questions</div>;
     const q = qsList[state.currentIndex];
     const question = { id: q.id, text: lang === 'ar' ? q.question.ar : q.question.fr, options: q.options.map((o: any) => ({ id: o.id, text: lang === 'ar' ? o.text.ar : o.text.fr })) };
+    const progress = ((state.currentIndex + 1) / qsList.length) * 100;
     return (
-      <div className="min-h-screen" style={{ background: 'linear-gradient(180deg, rgba(11,31,75,0.6) 0%, rgba(74,36,24,0.75) 100%), url(/bg/quiz-bg.jpeg) center/cover no-repeat' }}>
-        <div className="max-w-3xl mx-auto px-4 py-8">
-          <div className="mb-4 text-cream">Question {state.currentIndex + 1} / {qsList.length}</div>
-          <div className="w-full h-2 bg-white/20 rounded mb-6"><div className="h-2 bg-amber rounded" style={{ width: `${((state.currentIndex + 1)/qsList.length)*100}%` }} /></div>
-          <div className="flex justify-center mb-6"><TimerRing duration={20} onExpire={() => timeExpired(qsList)} key={state.currentIndex} /></div>
-          <div className="bg-white/10 backdrop-blur p-6 rounded-lg">
+      <div className="min-h-screen" style={{ background: 'linear-gradient(180deg, rgba(9,20,36,0.8) 0%, rgba(17,40,74,0.9) 100%), url(/bg/quiz-bg.jpeg) center/cover no-repeat' }}>
+        <div className="max-w-3xl mx-auto px-margin-mobile lg:px-margin py-space-xl">
+          <div className="mb-2 text-on-surface font-body-sm">{lang === 'ar' ? 'السؤال' : 'Question'} {state.currentIndex + 1} / {qsList.length}</div>
+          <div className="w-full h-2 bg-surface-container-high rounded mb-space-lg overflow-hidden"><div className="h-2 bg-gold-metallic rounded transition-all duration-300" style={{ width: `${progress}%` }} /></div>
+          <div className="flex justify-center mb-space-lg"><TimerRing duration={20} onExpire={() => timeExpired(qsList)} key={state.currentIndex} lang={lang} /></div>
+          <div className="card-moroccan p-space-lg">
             <QuizQuestion question={question} selected={state.selectedOption} locked={state.isLocked} onSelect={selectOption} />
-            <button disabled={!state.isLocked || state.isSubmitting} onClick={() => advanceOrFinish(qsList)} className="mt-6 px-6 py-3 rounded-full bg-amber text-ink">{lang === 'ar' ? 'التالي' : 'Suivant'}</button>
+            <button disabled={!state.isLocked || state.isSubmitting} onClick={() => advanceOrFinish(qsList)} className="mt-space-lg btn-primary disabled:opacity-50 disabled:cursor-not-allowed">{lang === 'ar' ? 'التالي' : 'Suivant'}</button>
           </div>
         </div>
       </div>
@@ -58,29 +60,41 @@ export default function Quiz({ lang }: { lang: Lang }) {
 
   if (state.screen === 'register') {
     return (
-      <div className="min-h-screen flex items-center justify-center" style={{ background: 'linear-gradient(180deg, rgba(11,31,75,0.6) 0%, rgba(74,36,24,0.75) 100%), url(/bg/quiz-bg.jpeg) center/cover no-repeat' }}>
-        <form onSubmit={onRegister} className="bg-white/10 backdrop-blur p-6 rounded-lg max-w-md w-full space-y-4">
+      <div className="min-h-screen flex items-center justify-center px-margin-mobile" style={{ background: 'linear-gradient(180deg, rgba(9,20,36,0.85) 0%, rgba(17,40,74,0.9) 100%), url(/bg/quiz-bg.jpeg) center/cover no-repeat' }}>
+        <form onSubmit={onRegister} className="card-moroccan p-space-lg md:p-space-xl max-w-md w-full space-y-space-md">
           {isUsingMock && (
-            <div className="bg-red-500/80 text-white text-xs rounded p-2">
-              ⚠️ Mode hors-ligne (Supabase non configuré) — les données ne seront pas sauvegardées.
+            <div className="bg-error-container text-on-error-container text-xs rounded p-space-xs">
+              {lang === 'ar' ? '⚠️ وضع عدم الاتصال - لن يتم حفظ البيانات' : '⚠️ Mode hors-ligne (Supabase non configuré) — les données ne seront pas sauvegardées.'}
             </div>
           )}
-          <h1 className="text-cream text-2xl">{lang === 'ar' ? 'التسجيل' : 'Inscription'}</h1>
+          <h1 className="font-serif text-3xl font-semibold text-text-on-dark-primary">{lang === 'ar' ? 'التسجيل' : 'Inscription'}</h1>
           <div>
-            <input value={fullName} onChange={(e) => setFullName(e.target.value)} placeholder={lang === 'ar' ? 'الاسم الكامل' : 'Nom complet'} className="w-full p-2 rounded bg-white/10 text-cream" />
-            {errors.fullName && <div className="text-red-400 text-xs">{errors.fullName}</div>}
+            <label className="block text-on-surface-variant text-sm mb-1">{lang === 'ar' ? 'الاسم الكامل' : 'Nom complet'}</label>
+            <input value={fullName} onChange={(e) => setFullName(e.target.value)} placeholder={lang === 'ar' ? 'الاسم الكامل' : 'Nom complet'} className="w-full p-2 rounded bg-surface-container-high text-on-surface border border-outline-variant focus:border-gold-metallic focus:outline-none" maxLength={60} />
+            {errors.fullName && <div className="text-error text-xs mt-1">{errors.fullName}</div>}
           </div>
           <div>
-            <input value={className} onChange={(e) => setClassName(e.target.value)} placeholder={lang === 'ar' ? 'القسم' : 'Classe'} className="w-full p-2 rounded bg-white/10 text-cream" />
-            {errors.className && <div className="text-red-400 text-xs">{errors.className}</div>}
+            <label className="block text-on-surface-variant text-sm mb-1">{lang === 'ar' ? 'القسم / الصف' : 'Classe'}</label>
+            <input value={className} onChange={(e) => setClassName(e.target.value)} placeholder={lang === 'ar' ? 'القسم' : 'Classe'} className="w-full p-2 rounded bg-surface-container-high text-on-surface border border-outline-variant focus:border-gold-metallic focus:outline-none" maxLength={40} />
+            {errors.className && <div className="text-error text-xs mt-1">{errors.className}</div>}
           </div>
-          <div className="flex gap-4 text-cream">
-            {['1ère année','2ème année','3ème année'].map(y => (
-              <label key={y} className="flex items-center gap-2"><input type="radio" checked={yearOfStudy === y} onChange={() => setYearOfStudy(y)} />{y}</label>
-            ))}
+          <div>
+            <label className="block text-on-surface-variant text-sm mb-2">{lang === 'ar' ? 'السنة الدراسية' : "Année d'études"}</label>
+            <div className="flex flex-wrap gap-space-md text-on-surface">
+              {['1ère année','2ème année','3ème année'].map(y => (
+                <label key={y} className="flex items-center gap-2 cursor-pointer">
+                  <input type="radio" checked={yearOfStudy === y} onChange={() => setYearOfStudy(y)} className="accent-gold-metallic" />
+                  <span>
+                    {lang === 'ar'
+                      ? { '1ère année': 'السنة الأولى', '2ème année': 'السنة الثانية', '3ème année': 'السنة الثالثة' }[y]
+                      : y}
+                  </span>
+                </label>
+              ))}
+            </div>
           </div>
-          <button type="submit" disabled={state.isSubmitting} className="w-full px-6 py-3 rounded-full bg-amber text-ink">{lang === 'ar' ? 'بدء' : 'Commencer'}</button>
-          {(localError || state.error) && <div className="text-red-400 text-sm">{localError || state.error}</div>}
+          <button type="submit" disabled={state.isSubmitting} className="w-full btn-primary disabled:opacity-50">{lang === 'ar' ? 'بدء الاختبار' : 'Commencer le quiz'}</button>
+          {(localError || state.error) && <div className="text-error text-sm">{localError || state.error}</div>}
         </form>
       </div>
     );
@@ -88,20 +102,20 @@ export default function Quiz({ lang }: { lang: Lang }) {
 
   if (state.screen === 'result' && state.result) {
     return (
-      <div className="min-h-screen flex items-center justify-center" style={{ background: 'linear-gradient(180deg, rgba(11,31,75,0.6) 0%, rgba(74,36,24,0.75) 100%), url(/bg/quiz-bg.jpeg) center/cover no-repeat' }}>
-        <div className="bg-white/10 backdrop-blur p-8 rounded-lg text-center space-y-4">
-          <div className="text-amber text-6xl font-bold">{state.result.score}</div>
-          <div className="text-cream">{state.result.correct_count}/10 {lang === 'ar' ? 'صحيحة' : 'correctes'}</div>
-          <div className="text-cream/80">{lang === 'ar' ? 'الوقت' : 'Temps'}: {state.result.total_time_seconds}s</div>
-          <div className="text-cream/80">{lang === 'ar' ? 'الترتيب' : 'Rang'}: {state.result.rank}</div>
-          <div className="flex gap-3 justify-center">
-            <a href="/leaderboard" className="px-6 py-3 rounded-full bg-amber text-ink">{lang === 'ar' ? 'الترتيب' : 'Classement'}</a>
-            <button onClick={restart} className="px-6 py-3 rounded-full border border-amber text-amber">{lang === 'ar' ? 'إعادة' : 'Rejouer'}</button>
+      <div className="min-h-screen flex items-center justify-center px-margin-mobile" style={{ background: 'linear-gradient(180deg, rgba(9,20,36,0.85) 0%, rgba(17,40,74,0.9) 100%), url(/bg/quiz-bg.jpeg) center/cover no-repeat' }}>
+        <div className="card-moroccan p-space-xl text-center space-y-space-md max-w-md w-full">
+          <div className="text-gold-metallic text-6xl font-bold font-serif">{state.result.score}</div>
+          <div className="text-text-on-dark-primary text-lg">{state.result.correct_count}/10 {lang === 'ar' ? 'إجابة صحيحة' : 'correctes'}</div>
+          <div className="text-on-surface-variant">{lang === 'ar' ? 'الوقت' : 'Temps'}: {Math.round(state.result.total_time_seconds * 10) / 10}s</div>
+          <div className="text-on-surface-variant">{lang === 'ar' ? 'الترتيب' : 'Rang'}: #{state.result.rank}</div>
+          <div className="flex flex-wrap gap-space-md justify-center">
+            <Link to="/leaderboard" className="btn-primary">{lang === 'ar' ? 'عرض الترتيب' : 'Voir le classement'}</Link>
+            <button onClick={restart} className="btn-secondary">{lang === 'ar' ? 'إعادة اللعب' : 'Rejouer'}</button>
           </div>
         </div>
       </div>
     );
   }
 
-  return <div>...</div>;
+  return <div className="min-h-screen flex items-center justify-center text-on-surface">{lang === 'ar' ? 'جاري التحميل...' : 'Chargement...'}</div>;
 }

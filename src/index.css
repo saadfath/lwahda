@@ -3,22 +3,130 @@
 @tailwind utilities;
 
 :root {
-  --midnight: #0B1F4B;
-  --dusk: #1D4FB8;
-  --amber: #F2A93B;
-  --gold: #D98A1F;
-  --terracotta: #4A2418;
-  --cream: #F6E7CB;
-  --teal: #1F9A94;
-  --ink: #1A1209;
+  --background: #091424;
+  --surface: #091424;
+  --surface-navy: #11284A;
+  --gold-metallic: #D4AF37;
+  --crimson-accent: #B91C1C;
+  --emerald-bright: #059669;
+  --ivory-base: #FDFBF7;
 }
 
 html {
-  font-family: Inter, system-ui, -apple-system, sans-serif;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  background: var(--background);
+}
+
+[lang="ar"] {
+  font-feature-settings: 'ss03' 1;
+}
+
+[lang="ar"] body,
+[lang="ar"] .font-sans {
+  font-family: 'IBM Plex Sans Arabic', 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+[lang="ar"] .font-serif,
+[lang="ar"] .t-hero,
+[lang="ar"] .t-display,
+[lang="ar"] .t-section,
+[lang="ar"] .t-tagline {
+  font-family: 'Noto Naskh Arabic', 'Noto Serif', serif;
+}
+
+:focus-visible {
+  outline: 2px solid var(--gold-metallic);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: rgba(212, 175, 55, 0.35);
+  color: #FDFBF7;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 body {
   margin: 0;
-  background: var(--midnight);
-  color: var(--cream);
+  background: radial-gradient(ellipse at top, #11284A 0%, #091424 50%, #040e1e 100%);
+  color: #d8e3fa;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.zellige-pattern {
+  background-image: radial-gradient(rgba(212, 175, 55, 0.04) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.moroccan-corner::before,
+.moroccan-corner::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-color: rgba(212, 175, 55, 0.3);
+}
+
+.moroccan-corner::before {
+  top: 0;
+  right: 0;
+  border-top-width: 2px;
+  border-right-width: 2px;
+}
+
+.moroccan-corner::after {
+  bottom: 0;
+  left: 0;
+  border-bottom-width: 2px;
+  border-left-width: 2px;
+}
+
+@layer components {
+  .t-hero {
+    @apply font-serif text-4xl md:text-5xl lg:text-[48px] leading-tight font-bold text-text-on-dark-primary;
+  }
+  .t-display {
+    @apply font-serif text-3xl md:text-4xl leading-tight font-semibold text-text-on-dark-primary;
+  }
+  .t-section {
+    @apply font-serif text-2xl md:text-3xl leading-snug font-semibold text-text-on-dark-primary;
+  }
+  .t-lead {
+    @apply text-lg md:text-xl leading-relaxed text-on-surface-variant;
+  }
+  .t-tagline {
+    @apply font-serif text-lg md:text-xl font-semibold text-gold-metallic;
+  }
+  .t-body {
+    @apply text-base leading-relaxed text-on-surface;
+  }
+  .t-caption {
+    @apply text-sm leading-normal text-on-surface-variant;
+  }
+  .t-nav {
+    @apply text-sm font-medium;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-space-md py-space-xs rounded bg-secondary-container text-on-secondary-container hover:bg-crimson-accent hover:text-ivory-base shadow-moroccan-elevated transition-all min-h-[44px] min-w-[44px] font-label-md;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-space-md py-space-xs rounded border border-gold-metallic/40 text-gold-metallic hover:bg-gold-metallic/10 transition-all min-h-[44px] min-w-[44px] font-label-md;
+  }
+  .card-moroccan {
+    @apply bg-surface-container rounded-xl shadow-moroccan border border-gold-metallic/20 relative overflow-hidden;
+  }
 }

@@ -1,10 +1,20 @@
 import { QRCodeSVG } from 'qrcode.react';
+import type { Lang } from '../i18n/types';
 
-export default function QRCodeDisplay({ url }: { url: string }) {
+export default function QRCodeDisplay({ url, lang = 'fr' }: { url: string; lang?: Lang }) {
   return (
-    <div className="flex flex-col items-center gap-2">
-      <QRCodeSVG value={url} size={256} fgColor="#F6E7CB" bgColor="#0B1F4B" />
-      <div className="text-cream">Scanner pour jouer / للمشاركة</div>
+    <div className="card-moroccan p-space-md flex flex-col items-center gap-space-sm w-full max-w-[280px]">
+      <div className="rounded-lg overflow-hidden bg-ivory-base p-2">
+        <QRCodeSVG value={url} size={208} fgColor="#091424" bgColor="#FDFBF7" level="M" />
+      </div>
+      <div className="text-center">
+        <div className="text-text-on-dark-primary font-semibold text-sm">
+          {lang === 'ar' ? 'امسح الرمز للمشاركة' : 'Scannez pour participer'}
+        </div>
+        <div className="text-on-surface-variant text-xs mt-1">
+          {lang === 'ar' ? 'حوّل هاتفك نحو الرمز وابدأ الاختبار' : 'Ouvrez le quiz directement depuis votre téléphone'}
+        </div>
+      </div>
     </div>
   );
 }

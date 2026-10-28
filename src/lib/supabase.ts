@@ -64,7 +64,9 @@ function createMockClient() {
 // Detect if the anon key is a placeholder/demo key
 function isRealKey(key: string): boolean {
   try {
-    const payload = JSON.parse(atob(key.split('.')[1]));
+    const parts = key.split('.');
+    if (parts.length < 2) return false;
+    const payload = JSON.parse(atob(parts[1]));
     // Demo keys have "supabase-demo" as issuer — reject them
     return payload?.iss !== 'supabase-demo' && payload?.role === 'anon';
   } catch {
@@ -73,7 +75,7 @@ function isRealKey(key: string): boolean {
 }
 
 let supabaseClient: any;
-const hasRealConfig = url && anonKey && url.includes('supabase.co') && isRealKey(anonKey);
+const hasRealConfig = !!(url && anonKey && url.includes('supabase.co') && isRealKey(anonKey));
 
 if (hasRealConfig) {
   try {

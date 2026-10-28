@@ -35,7 +35,7 @@ function PodiumCard({ row, place, lang }: { row: any; place: 1 | 2 | 3; lang: La
 
 export default function Leaderboard({ lang }: { lang: Lang }) {
   const { rows, loading, error, refetch } = useLeaderboard();
-  const siteUrl = (import.meta.env.VITE_PUBLIC_SITE_URL as string) || window.location.origin;
+  const siteUrl = (import.meta.env.VITE_PUBLIC_SITE_URL as string) || 'https://lwahda.vercel.app';
   const top3 = rows.slice(0, 3);
 
   return (

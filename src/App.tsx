@@ -8,6 +8,7 @@ import Leaderboard from './pages/Leaderboard';
 import NotFound from './pages/NotFound';
 import ErrorBoundary from './components/ErrorBoundary';
 import Footer from './components/Footer';
+import Admin from './pages/Admin';
 
 export default function App() {
   const { lang, setLang } = useLanguage();
@@ -21,6 +22,7 @@ export default function App() {
             <Route path="/informations"  element={<Informations lang={lang} />} />
             <Route path="/quiz"          element={<Quiz lang={lang} />} />
             <Route path="/leaderboard"   element={<Leaderboard lang={lang} />} />
+            <Route path="/admin"         element={<Admin lang={lang} />} />
             <Route path="*"             element={<NotFound lang={lang} />} />
           </Routes>
         </ErrorBoundary>

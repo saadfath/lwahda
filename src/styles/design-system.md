@@ -1,3 +1,14 @@
+# Moroccan Heritage & Unity — Design System
+
+> **Applied project palette (Moroccan flag)**
+> The live front end uses the Moroccan flag colours in place of the navy/gold theme described below:
+> - **Deep flag-red surfaces:** `#1A0709` (background), `#5E0F1A` (header), `#2E0D12` (cards).
+> - **Flag-green accents:** `#006233` / `#0C6B3C` (primary buttons), `#9FE7B7` (labels, borders, highlights).
+> - **Flag-red accent:** `#C1272D`.
+> - **Ivory text:** `#FFF9F4`.
+> Legacy token names (`gold-metallic`, `gold-amber`, `surface-navy`) are kept for code compatibility and now resolve to green accents and deep red surfaces respectively.
+> **Typography:** the live site uses **Roboto** (300–900) for Latin text, with **Noto Sans Arabic** for Arabic; the font stacks described below are superseded.
+
 ---
 name: Moroccan Heritage & Unity
 colors:
@@ -60,62 +71,62 @@ colors:
   text-on-dark-secondary: '#BAC7D5'
 typography:
   display-hero:
-    fontFamily: Noto Serif
+    fontFamily: Roboto
     fontSize: 48px
     fontWeight: '700'
     lineHeight: 56px
   display-hero-mobile:
-    fontFamily: Noto Serif
+    fontFamily: Roboto
     fontSize: 32px
     fontWeight: '700'
     lineHeight: 40px
   headline-lg:
-    fontFamily: Noto Serif
+    fontFamily: Roboto
     fontSize: 36px
     fontWeight: '600'
     lineHeight: 44px
   headline-lg-mobile:
-    fontFamily: Noto Serif
+    fontFamily: Roboto
     fontSize: 26px
     fontWeight: '600'
     lineHeight: 34px
   headline-md:
-    fontFamily: Noto Serif
+    fontFamily: Roboto
     fontSize: 24px
     fontWeight: '600'
     lineHeight: 32px
   headline-sm:
-    fontFamily: Noto Serif
+    fontFamily: Roboto
     fontSize: 20px
     fontWeight: '600'
     lineHeight: 28px
   title-md:
-    fontFamily: Plus Jakarta Sans
+    fontFamily: Roboto
     fontSize: 18px
     fontWeight: '600'
     lineHeight: 26px
   body-lg:
-    fontFamily: Plus Jakarta Sans
+    fontFamily: Roboto
     fontSize: 18px
     fontWeight: '400'
     lineHeight: 28px
   body-md:
-    fontFamily: Plus Jakarta Sans
+    fontFamily: Roboto
     fontSize: 16px
     fontWeight: '400'
     lineHeight: 24px
   body-sm:
-    fontFamily: Plus Jakarta Sans
+    fontFamily: Roboto
     fontSize: 14px
     fontWeight: '400'
     lineHeight: 20px
   label-md:
-    fontFamily: Plus Jakarta Sans
+    fontFamily: Roboto
     fontSize: 13px
     fontWeight: '600'
     lineHeight: 18px
   label-sm:
-    fontFamily: Plus Jakarta Sans
+    fontFamily: Roboto
     fontSize: 11px
     fontWeight: '700'
     lineHeight: 16px
@@ -164,9 +175,8 @@ The palette draws directly from the official colors of the Kingdom of Morocco, t
 
 The typographic hierarchy accommodates bilingual and trilingual layouts (Arabic, French, English) with equal dignity and visual weight:
 
-- **Headlines & Editorial Titles:** Set in **Noto Serif**, offering classical distinction, calligraphic poise, and organic pairing with traditional Moroccan crests and geometric lines.
-- **Body & Interactive Controls:** Set in **Plus Jakarta Sans**, chosen for clean geometric aperture, soft terminals, and crisp rendering on dense quiz interfaces, options lists, and data-heavy scoreboards.
-- **Bilingual & RTL Harmony:** For Arabic-specific typography, pair with **Amiri** or **Cairo** to mirror the contrast and stroke characteristics of Noto Serif and Plus Jakarta Sans respectively. When switching text direction (`dir="rtl"`), maintain baseline alignment and symmetric padding across card frames.
+- **Headlines, Body & Interactive Controls:** Set in **Roboto** (weights 300–900). Its neutral, highly legible geometry gives headings a confident editorial voice while keeping dense quiz interfaces, option lists, and scoreboards crisp.
+- **Bilingual & RTL Harmony:** Roboto has no Arabic glyphs, so Arabic copy falls back to **Noto Sans Arabic**, matched in weight and x-height for a seamless switch. When text direction changes (`dir="rtl"`), maintain baseline alignment and symmetric padding across card frames.
 
 ## Layout & Spacing
 

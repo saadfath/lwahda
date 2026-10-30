@@ -16,7 +16,7 @@ export default function Home({ lang }: { lang: Lang }) {
   return (
     <div className="min-h-screen">
       {/* TODO: verify image license before public deployment */}
-      <section className="relative min-h-[70vh] flex items-center" style={{ background: 'linear-gradient(180deg, rgba(9,20,36,0.75) 0%, rgba(17,40,74,0.85) 100%), url(/bg/hero-home.jpeg) center/cover no-repeat' }}>
+      <section className="relative min-h-[70vh] flex items-center" style={{ background: 'linear-gradient(180deg, rgba(26,7,9,0.72) 0%, rgba(94,15,26,0.84) 100%), url(/bg/hero-home.jpeg) center/cover no-repeat' }}>
         <div className="max-w-[1280px] mx-auto px-margin-mobile lg:px-margin py-space-xl relative z-10">
           <div className="flex items-center gap-space-xs text-gold-metallic mb-space-sm">
             <span className="material-symbols-outlined text-lg" style={{ fontVariationSettings: "'FILL' 1" }}>verified</span>
@@ -30,7 +30,7 @@ export default function Home({ lang }: { lang: Lang }) {
             <Link to="/informations" className="btn-secondary">{typeof data.hero.secondaryCta === 'string' ? data.hero.secondaryCta : data.hero.secondaryCta?.label}</Link>
           </div>
         </div>
-        <div className="absolute inset-0 pointer-events-none opacity-[0.03] bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:24px_24px]"></div>
+        <div className="absolute inset-0 pointer-events-none opacity-[0.03] bg-[radial-gradient(#9FE7B7_1px,transparent_1px)] [background-size:24px_24px]"></div>
       </section>
       <section className="max-w-[1280px] mx-auto px-margin-mobile lg:px-margin py-space-xl grid md:grid-cols-2 gap-space-xl items-center">
         <ImageCarousel images={carouselImages} lang={lang} />

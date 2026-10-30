@@ -10,7 +10,7 @@ export default function Informations({ lang }: { lang: Lang }) {
   const data = lang === 'ar' ? (infoAr as any) : (infoFr as any);
   return (
     <div className="min-h-screen">
-      <section className="relative min-h-[50vh] flex items-center" style={{ background: 'linear-gradient(180deg, rgba(9,20,36,0.8) 0%, rgba(17,40,74,0.9) 100%), url(/bg/hero-info.jpeg) center/cover no-repeat' }}>
+      <section className="relative min-h-[50vh] flex items-center" style={{ background: 'linear-gradient(180deg, rgba(26,7,9,0.80) 0%, rgba(94,15,26,0.90) 100%), url(/bg/hero-info.jpeg) center/cover no-repeat' }}>
         <div className="max-w-[1280px] mx-auto px-margin-mobile lg:px-margin py-space-xl relative z-10">
           <div className="flex items-center gap-space-xs text-gold-metallic mb-space-sm">
             <span className="material-symbols-outlined text-lg" style={{ fontVariationSettings: "'FILL' 1" }}>verified</span>
@@ -19,7 +19,7 @@ export default function Informations({ lang }: { lang: Lang }) {
           <h1 className="font-serif text-4xl md:text-5xl font-bold text-text-on-dark-primary mb-space-md max-w-4xl">{data.pageHeader.title}</h1>
           <p className="text-lg md:text-xl text-on-surface-variant max-w-3xl">{data.pageHeader.introduction}</p>
         </div>
-        <div className="absolute inset-0 pointer-events-none opacity-[0.03] bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:24px_24px]"></div>
+        <div className="absolute inset-0 pointer-events-none opacity-[0.03] bg-[radial-gradient(#9FE7B7_1px,transparent_1px)] [background-size:24px_24px]"></div>
       </section>
       {data.keyFacts && (
         <section className="max-w-[1280px] mx-auto px-margin-mobile lg:px-margin py-space-xl">

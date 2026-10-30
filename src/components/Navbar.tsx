@@ -86,7 +86,7 @@ export default function Navbar({ lang, setLang }: NavbarProps) {
 
           <Link
             to="/quiz"
-            className="hidden sm:inline-flex items-center justify-center px-space-md py-space-xs rounded-lg bg-secondary-container text-ivory-base font-label-md text-sm hover:bg-crimson-accent shadow-moroccan-elevated transition-all min-h-[40px]"
+            className="hidden sm:inline-flex items-center justify-center px-space-md py-space-xs rounded-lg bg-secondary-container text-ivory-base font-label-md text-sm hover:bg-green-deep shadow-moroccan-elevated transition-all min-h-[40px]"
           >
             {lang === 'ar' ? 'ابدأ الاختبار' : 'Commencer le quiz'}
           </Link>
@@ -128,7 +128,7 @@ export default function Navbar({ lang, setLang }: NavbarProps) {
             <Link
               to="/quiz"
               onClick={() => setMenuOpen(false)}
-              className="mt-space-xs inline-flex items-center justify-center px-space-md py-space-sm rounded-lg bg-secondary-container text-ivory-base font-label-md hover:bg-crimson-accent transition-all min-h-[44px]"
+              className="mt-space-xs inline-flex items-center justify-center px-space-md py-space-sm rounded-lg bg-secondary-container text-ivory-base font-label-md hover:bg-green-deep transition-all min-h-[44px]"
             >
               {lang === 'ar' ? 'ابدأ الاختبار' : 'Commencer le quiz'}
             </Link>

@@ -3,35 +3,40 @@
 @tailwind utilities;
 
 :root {
-  --background: #091424;
-  --surface: #091424;
-  --surface-navy: #11284A;
-  --gold-metallic: #D4AF37;
-  --crimson-accent: #B91C1C;
-  --emerald-bright: #059669;
-  --ivory-base: #FDFBF7;
+  --background: #1A0709;
+  --surface: #1A0709;
+  --surface-navy: #5E0F1A;
+  --gold-metallic: #9FE7B7;
+  --crimson-accent: #C1272D;
+  --emerald-bright: #2FA866;
+  --ivory-base: #FFF9F4;
 }
 
 html {
-  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-family: 'Roboto', system-ui, -apple-system, sans-serif;
   background: var(--background);
 }
 
-[lang="ar"] {
-  font-feature-settings: 'ss03' 1;
-}
-
 [lang="ar"] body,
-[lang="ar"] .font-sans {
-  font-family: 'IBM Plex Sans Arabic', 'Plus Jakarta Sans', system-ui, sans-serif;
-}
-
+[lang="ar"] .font-sans,
 [lang="ar"] .font-serif,
+[lang="ar"] .font-headline,
+[lang="ar"] .font-body,
+[lang="ar"] .font-display-hero,
+[lang="ar"] .font-headline-lg,
+[lang="ar"] .font-headline-md,
+[lang="ar"] .font-headline-sm,
+[lang="ar"] .font-title-md,
+[lang="ar"] .font-body-lg,
+[lang="ar"] .font-body-md,
+[lang="ar"] .font-body-sm,
+[lang="ar"] .font-label-md,
+[lang="ar"] .font-label-sm,
 [lang="ar"] .t-hero,
 [lang="ar"] .t-display,
 [lang="ar"] .t-section,
 [lang="ar"] .t-tagline {
-  font-family: 'Noto Naskh Arabic', 'Noto Serif', serif;
+  font-family: 'Noto Sans Arabic', 'Roboto', system-ui, sans-serif;
 }
 
 :focus-visible {
@@ -40,8 +45,8 @@ html {
 }
 
 ::selection {
-  background: rgba(212, 175, 55, 0.35);
-  color: #FDFBF7;
+  background: rgba(159, 231, 183, 0.35);
+  color: #1A0709;
 }
 
 html {
@@ -61,14 +66,14 @@ html {
 
 body {
   margin: 0;
-  background: radial-gradient(ellipse at top, #11284A 0%, #091424 50%, #040e1e 100%);
-  color: #d8e3fa;
+  background: radial-gradient(ellipse at top, #5E0F1A 0%, #2E0D12 45%, #120406 100%);
+  color: #FBEDEA;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 .zellige-pattern {
-  background-image: radial-gradient(rgba(212, 175, 55, 0.04) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(159, 231, 183, 0.05) 1px, transparent 1px);
   background-size: 24px 24px;
 }
 
@@ -78,7 +83,7 @@ body {
   position: absolute;
   width: 24px;
   height: 24px;
-  border-color: rgba(212, 175, 55, 0.3);
+  border-color: rgba(159, 231, 183, 0.35);
 }
 
 .moroccan-corner::before {
@@ -121,7 +126,7 @@ body {
     @apply text-sm font-medium;
   }
   .btn-primary {
-    @apply inline-flex items-center justify-center px-space-md py-space-xs rounded bg-secondary-container text-on-secondary-container hover:bg-crimson-accent hover:text-ivory-base shadow-moroccan-elevated transition-all min-h-[44px] min-w-[44px] font-label-md;
+    @apply inline-flex items-center justify-center px-space-md py-space-xs rounded bg-secondary-container text-on-secondary-container hover:bg-green-deep hover:text-ivory-base shadow-moroccan-elevated transition-all min-h-[44px] min-w-[44px] font-label-md;
   }
   .btn-secondary {
     @apply inline-flex items-center justify-center px-space-md py-space-xs rounded border border-gold-metallic/40 text-gold-metallic hover:bg-gold-metallic/10 transition-all min-h-[44px] min-w-[44px] font-label-md;

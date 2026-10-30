@@ -5,7 +5,14 @@ export default function QRCodeDisplay({ url, lang = 'fr' }: { url: string; lang?
   return (
     <div className="card-moroccan p-space-md flex flex-col items-center gap-space-sm w-full max-w-[280px]">
       <div className="rounded-lg overflow-hidden bg-ivory-base p-2">
-        <QRCodeSVG value={url} size={208} fgColor="#091424" bgColor="#FDFBF7" level="M" />
+        <QRCodeSVG
+          value={url}
+          size={208}
+          fgColor="#1A0709"
+          bgColor="#FFF9F4"
+          level="M"
+          title={lang === 'ar' ? 'رمز QR للوصول إلى الاختبار' : 'QR code pour accéder au quiz'}
+        />
       </div>
       <div className="text-center">
         <div className="text-text-on-dark-primary font-semibold text-sm">

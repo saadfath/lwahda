@@ -44,7 +44,7 @@ export default function Quiz({ lang }: { lang: Lang }) {
     const question = { id: q.id, text: lang === 'ar' ? q.question.ar : q.question.fr, options: q.options.map((o: any) => ({ id: o.id, text: lang === 'ar' ? o.text.ar : o.text.fr })) };
     const progress = ((state.currentIndex + 1) / qsList.length) * 100;
     return (
-      <div className="min-h-screen" style={{ background: 'linear-gradient(180deg, rgba(9,20,36,0.8) 0%, rgba(17,40,74,0.9) 100%), url(/bg/quiz-bg.jpeg) center/cover no-repeat' }}>
+      <div className="min-h-screen" style={{ background: 'linear-gradient(180deg, rgba(26,7,9,0.84) 0%, rgba(94,15,26,0.90) 100%), url(/bg/quiz-bg.jpeg) center/cover no-repeat' }}>
         <div className="max-w-3xl mx-auto px-margin-mobile lg:px-margin py-space-xl">
           <div className="mb-2 text-on-surface font-body-sm">{lang === 'ar' ? 'السؤال' : 'Question'} {state.currentIndex + 1} / {qsList.length}</div>
           <div className="w-full h-2 bg-surface-container-high rounded mb-space-lg overflow-hidden"><div className="h-2 bg-gold-metallic rounded transition-all duration-300" style={{ width: `${progress}%` }} /></div>
@@ -60,7 +60,7 @@ export default function Quiz({ lang }: { lang: Lang }) {
 
   if (state.screen === 'register') {
     return (
-      <div className="min-h-screen flex items-center justify-center px-margin-mobile" style={{ background: 'linear-gradient(180deg, rgba(9,20,36,0.85) 0%, rgba(17,40,74,0.9) 100%), url(/bg/quiz-bg.jpeg) center/cover no-repeat' }}>
+      <div className="min-h-screen flex items-center justify-center px-margin-mobile" style={{ background: 'linear-gradient(180deg, rgba(26,7,9,0.86) 0%, rgba(94,15,26,0.90) 100%), url(/bg/quiz-bg.jpeg) center/cover no-repeat' }}>
         <form onSubmit={onRegister} className="card-moroccan p-space-lg md:p-space-xl max-w-md w-full space-y-space-md">
           {isUsingMock && (
             <div className="bg-error-container text-on-error-container text-xs rounded p-space-xs">
@@ -102,7 +102,7 @@ export default function Quiz({ lang }: { lang: Lang }) {
 
   if (state.screen === 'result' && state.result) {
     return (
-      <div className="min-h-screen flex items-center justify-center px-margin-mobile" style={{ background: 'linear-gradient(180deg, rgba(9,20,36,0.85) 0%, rgba(17,40,74,0.9) 100%), url(/bg/quiz-bg.jpeg) center/cover no-repeat' }}>
+      <div className="min-h-screen flex items-center justify-center px-margin-mobile" style={{ background: 'linear-gradient(180deg, rgba(26,7,9,0.86) 0%, rgba(94,15,26,0.90) 100%), url(/bg/quiz-bg.jpeg) center/cover no-repeat' }}>
         <div className="card-moroccan p-space-xl text-center space-y-space-md max-w-md w-full">
           <div className="text-gold-metallic text-6xl font-bold font-serif">{state.result.score}</div>
           <div className="text-text-on-dark-primary text-lg">{state.result.correct_count}/10 {lang === 'ar' ? 'إجابة صحيحة' : 'correctes'}</div>

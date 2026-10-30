@@ -25,7 +25,7 @@ export default function TimerRing({ duration = 20, onExpire, lang = 'fr' }: { du
   const radius = 28;
   const circ = 2 * Math.PI * radius;
   const offset = circ * (s / duration);
-  const color = s <= 3 ? '#ffb4ab' : s <= 7 ? '#F59E0B' : '#86d89d';
+  const color = s <= 3 ? '#FF8A80' : s <= 7 ? '#FFF9F4' : '#9FE7B7';
   const label = lang === 'ar'
     ? `${s} ${s === 1 ? 'ثانية' : 'ثوانٍ'} متبقية`
     : `${s} ${s === 1 ? 'seconde' : 'secondes'} restantes`;
@@ -33,9 +33,9 @@ export default function TimerRing({ duration = 20, onExpire, lang = 'fr' }: { du
   return (
     <div className="flex flex-col items-center gap-1">
       <svg width="72" height="72" role="timer" aria-live="polite" aria-label={label}>
-        <circle cx="36" cy="36" r={radius} stroke="#44474d" strokeWidth="6" fill="none" />
+        <circle cx="36" cy="36" r={radius} stroke="#6E3A42" strokeWidth="6" fill="none" />
         <circle cx="36" cy="36" r={radius} stroke={color} strokeWidth="6" fill="none" strokeDasharray={circ} strokeDashoffset={circ - offset} strokeLinecap="round" transform="rotate(-90 36 36)" />
-        <text x="36" y="42" textAnchor="middle" fill="#FDFBF7" fontSize="16">{s}</text>
+        <text x="36" y="42" textAnchor="middle" fill="#FFF9F4" fontSize="16">{s}</text>
       </svg>
       <span className="text-[11px] text-on-surface-variant">
         {lang === 'ar' ? 'ثانية' : 'secondes'}

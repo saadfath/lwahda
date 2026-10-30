@@ -41,7 +41,7 @@ export default function Leaderboard({ lang }: { lang: Lang }) {
   return (
     <div
       className="min-h-screen"
-      style={{ background: 'linear-gradient(180deg, rgba(9,20,36,0.88) 0%, rgba(17,40,74,0.92) 100%), url(/bg/leaderboard-bg.jpeg) center/cover no-repeat' }}
+      style={{ background: 'linear-gradient(180deg, rgba(26,7,9,0.88) 0%, rgba(94,15,26,0.92) 100%), url(/bg/leaderboard-bg.jpeg) center/cover no-repeat' }}
     >
       <div className="max-w-[1280px] mx-auto px-margin-mobile lg:px-margin py-space-xl">
         <div className="flex items-start gap-space-xs mb-space-sm">
